@@ -4,7 +4,6 @@ module.exports = {
 
 
     entry: {
-        server: './src/server/index.js',
         web: './src/web/index.js',
         html: "./src/web/index.html",
     },

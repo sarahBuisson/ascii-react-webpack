@@ -4,17 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
-    "build": "webpack --mode production"
+    "start": "node dist/server.bundle.js &&  npm run startClient",
+    "startClient": "webpack-dev-server --config ./webpack.client.config.js --mode development",
+    "startSertver": "webpack-dev-server --config ./webpack.server.config.js --mode development",
+    "build": "npm run buildClient && npm run buildServer",
+    "buildClient": "webpack --mode production --config webpack.client.config.js",
+    "buildServer": "webpack --mode production --config webpack.server.config.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-react": "^6.24.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
@@ -22,7 +29,13 @@
     "react-dom": "^16.8.6",
     "webpack": "^4.31.0",
     "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.3.1"
+    "webpack-dev-server": "^3.3.1",
+    "webpack-node-externals": "^1.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@babel/runtime": "^7.4.4",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0"
+  }
 }
