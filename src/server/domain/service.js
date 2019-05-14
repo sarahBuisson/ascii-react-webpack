@@ -1,10 +1,11 @@
 import Mower from './Mower';
 import Event from './Event';
 import uuid from 'uuid';
-import {Color,Status,Mark} from './enum'
-let mowers = []
+import {Color, Mark, Status} from './enum'
 
+let mowers = [];
 
+createMower(Mark.Xebia, Color.Purple, 2019);
 export function createMower(mark, color, year, status, history) {
 
 

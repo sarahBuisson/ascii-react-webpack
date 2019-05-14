@@ -38,7 +38,7 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/web/index.html",
             filename: "./index.html",
-            chunks: ['web']
+            chunks: ['web'],
 
         })
     ]

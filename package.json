@@ -6,16 +6,19 @@
   "scripts": {
     "start": "node dist/server.bundle.js &&  npm run startClient",
     "startClient": "webpack-dev-server --config ./webpack.client.config.js --mode development",
-    "startSertver": "webpack-dev-server --config ./webpack.server.config.js --mode development",
+    "startServer": "node dist/server.bundle.js",
     "build": "npm run buildClient && npm run buildServer",
     "buildClient": "webpack --mode production --config webpack.client.config.js",
-    "buildServer": "webpack --mode production --config webpack.server.config.js"
+    "buildServer": "webpack --mode production --config webpack.server.config.js",
+    "test": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-throw-expressions": "^7.2.0",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
@@ -25,6 +28,7 @@
     "babel-preset-react": "^6.24.1",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.31.0",
@@ -34,8 +38,16 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.4.4",
+    "@koa/cors": "^2.2.3",
+    "axios": "^0.18.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.11",
+    "react-redux": "^7.0.3",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "request": "^2.88.0",
+    "uuid": "^3.3.2"
   }
 }
