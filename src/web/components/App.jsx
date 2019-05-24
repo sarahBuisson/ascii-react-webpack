@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import LevelEditor from './game/editor/LevelEditor.jsx';
 import Level from "./game/render/Level.jsx";
+import {Route, Link,BrowserRouter as Router} from "react-router-dom";
 
 class App extends Component {
     constructor() {
@@ -17,30 +18,22 @@ class App extends Component {
 
     render() {
 
-        return (<div>
-                <Level></Level>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+        return (<Router>
+                <Link to="/">Home</Link>
+                <Link to="/game">game</Link>
+                <Link to="/editor">editor</Link>
 
-                <div style={{width:"4.5em","line-height":"1.5em", "letter-spacing": "0.2em"}}>uuY<br/>UU<br/>UU</div>
-                <div style={{width:"1em",height:"1em", "line-height":"1em"}}>X</div>
-                <LevelEditor></LevelEditor>
+                <Route exact path="/home"
+                       render={() => "welcome in the home"}
+                ></Route>
 
-            </div>
+                <Route exact path="/game"
+                       render={() => <Level></Level>}
+                ></Route>
+                <Route exact path="/editor"
+                       render={() => <LevelEditor></LevelEditor>}
+                ></Route>
+            </Router>
         );
     }
 }
