@@ -1,8 +1,6 @@
 import React, {Component} from "react";
-import MowerForm from './MowerForm.jsx'
-import _ from 'lodash'
-
-import * as service from '../services/api.js'
+import LevelEditor from './game/editor/LevelEditor.jsx';
+import Level from "./game/render/Level.jsx";
 
 class App extends Component {
     constructor() {
@@ -14,31 +12,34 @@ class App extends Component {
 
 
     componentDidMount() {
-        service.getMowers().then((response, c) => {
-            this.setState({
 
-                mowers: response.data
-            });
-        })
     }
 
     render() {
-        let listMowers = "no mower found";
-        if (this.state.mowers)
-            listMowers = _.map(this.state.mowers, (mower,i) =>
-                // Correct! Key should be specified inside the array.
-                <li key={i}>mower:{mower.mark} {mower.color}</li>
-            );
 
         return (<div>
-                <div>My Mower App</div>
+                <Level></Level>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
 
-                all my mower:
+                <div style={{width:"4.5em","line-height":"1.5em", "letter-spacing": "0.2em"}}>uuY<br/>UU<br/>UU</div>
+                <div style={{width:"1em",height:"1em", "line-height":"1em"}}>X</div>
+                <LevelEditor></LevelEditor>
 
-
-                <ul>{listMowers}</ul>
-
-                <MowerForm></MowerForm>
             </div>
         );
     }

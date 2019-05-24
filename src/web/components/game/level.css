@@ -1,0 +1,57 @@
+.tile {
+    display: inline-block;
+    user-select: none;
+    box-sizing:unset;
+}
+.gameRow{
+
+}
+.gameRow:nth-child(odd) .tile:nth-child(odd) {
+
+    background-color: grey
+}
+
+.gameRow:nth-child(odd) .tile:nth-child(even) {
+    background-color: lightgrey
+}
+
+.gameRow:nth-child(even) .tile:nth-child(odd) {
+    background-color: lightgrey
+
+}
+
+.gameRow:nth-child(even) .tile:nth-child(even) {
+
+    background-color: grey
+}
+
+.sprite {
+    bottom: 0;
+    z-index: 100;
+
+}
+
+.sprite .inner {
+    background: white;
+
+}
+
+
+.inner {
+    display: inline-block;
+
+
+}
+.asciiArt{
+    white-space: pre;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 1em;
+    letter-spacing: 0.2em;
+    font-size: 1em;
+}
+
+
+old{  line-height: 1.5em;
+    letter-spacing: 1em;
+}
+.message{position:absolute; bottom:0}
