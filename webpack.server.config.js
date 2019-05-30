@@ -22,7 +22,26 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
+                    options: {
 
+                        "presets": ["@babel/preset-env",
+                            "@babel/preset-react"
+                        ],
+                        "plugins": [
+                            [
+                                "@babel/transform-runtime"  //needed for the server
+                            ],
+
+                            [
+                                "@babel/plugin-proposal-class-properties"   //needed to have propertie function in js class
+                            ]
+
+
+                        ]
+
+
+
+                    }
                 },
 
             }
